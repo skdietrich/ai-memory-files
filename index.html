@@ -79,45 +79,9 @@ nav a {
   font-weight: 500;
 }
 
-nav a:hover { color: var(--accent); }
+nav a:hover, .logo:hover { color: var(--accent); }
 
-/* VIDEOS */
-.videos-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  max-width: 480px;
-  margin: 48px auto 0;
-}
-
-.video-item {
-  border: 1px solid var(--rule);
-  background: var(--white);
-}
-
-.video-item video {
-  width: 100%;
-  display: block;
-  background: #111;
-  aspect-ratio: 9 / 16;
-  object-fit: contain;
-}
-
-.video-meta {
-  padding: 20px 24px;
-  border-top: 1px solid var(--rule);
-}
-
-.video-meta h3 {
-  font-size: 22px;
-  font-weight: 500;
-  margin-bottom: 4px;
-}
-
-.video-meta p {
-  font-size: 14px;
-  color: var(--mute);
-  letter-spacing: 0.04em;
-}
+.logo:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
 
 /* HERO */
 .hero {
@@ -297,22 +261,33 @@ h2 {
 
 .package .btn { align-self: flex-start; margin-top: auto; }
 
-/* VIDEO FRAME */
+/* FEATURED PRIVATE LIVES FILM */
 .video-frame {
-  background: #111;
-  aspect-ratio: 9/16;
+  width: 100%;
   max-width: 380px;
   margin: 0 auto;
-  position: relative;
+  background: #111;
   border: 1px solid var(--rule);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #666;
-  font-size: 13px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
+
+.video-frame video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+  background: #111;
+}
+
+.film-caption {
+  max-width: 380px;
+  margin: 16px auto 0;
+  color: var(--mute);
+  font-size: 14px;
+  letter-spacing: 0.03em;
+}
+
+section[id], #films { scroll-margin-top: 100px; }
 
 /* FOOTER */
 footer {
@@ -336,7 +311,12 @@ footer .container {
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .hero-grid, .two-col, .packages { grid-template-columns: 1fr; gap: 40px; }
-  .hero h1 { font-size: 64px; }
+  .hero h1 { font-size: clamp(54px, 12vw, 64px); }
+  .hero { min-height: auto; padding: 165px 0 70px; }
+  .hero-cta { flex-wrap: wrap; }
+  header .container { flex-wrap: wrap; gap: 10px 20px; }
+  nav { display: flex; flex-wrap: wrap; gap: 8px 14px; }
+  nav a { margin-left: 0; }
   .container { padding: 0 24px; }
   nav a { margin-left: 16px; font-size: 12px; }
   section { padding: 80px 0; }
@@ -344,11 +324,11 @@ footer .container {
 }
 </style>
 </head>
-<body>
+<body id="top">
 
 <header>
   <div class="container">
-    <div class="logo">The AI Memory Files</div>
+    <a class="logo" href="#top" aria-label="The AI Memory Files — return to top">The AI Memory Files</a>
     <nav>
       <a href="#premise">Investigation</a>
       <a href="#dossier">The File</a>
@@ -372,10 +352,13 @@ footer .container {
         </div>
       </div>
       <div>
-        <div class="video-frame">
-          Reference Frame<br>Subject · Unsettled
+        <div class="video-frame" id="films">
+          <video controls playsinline preload="metadata" aria-label="Private Lives investigative film">
+            <source src="videos/ai-mem.mp4" type="video/mp4">
+            Your browser does not support the HTML5 video player.
+          </video>
         </div>
-        <p style="margin-top: 16px; font-size: 13px; color: var(--mute); letter-spacing: 0.05em;">The woman whose life was reconstructed.</p>
+        <p class="film-caption"><strong>Private Lives</strong> · A 15-second investigative film.</p>
       </div>
     </div>
   </div>
@@ -427,29 +410,9 @@ footer .container {
   </div>
 </section>
 
-<section id="films">
-  <div class="container">
-    <div class="section-label">03 — The Evidence</div>
-    <h2>Private Lives</h2>
-    <p style="max-width: 640px; margin-bottom: 8px; font-size: 18px;">A 15-second investigative film about private lives and artificial intelligence.</p>
-    <div class="videos-grid">
-      <div class="video-item">
-        <video controls playsinline preload="metadata" aria-label="Private Lives investigative film">
-          <source src="videos/ai-mem.mp4" type="video/mp4">
-          Your browser does not support the HTML5 video player.
-        </video>
-        <div class="video-meta">
-          <h3>Private Lives</h3>
-          <p>Intimate dialogue treatment</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section id="check">
   <div class="container">
-    <div class="section-label">04 — Check Your Data</div>
+    <div class="section-label">03 — Check Your Data</div>
     <h2>See what it<br>already knows.</h2>
     <p style="max-width: 640px; margin-bottom: 40px; font-size: 18px;">A direct examination of what artificial intelligence has reconstructed about your private life. Relationships. Medical details. Private fears. Assumptions you never confirmed.</p>
     <div class="packages" style="grid-template-columns: 1fr; max-width: 480px;">
@@ -471,7 +434,7 @@ footer .container {
 
 <section id="contact">
   <div class="container">
-    <div class="section-label">05 — Contact</div>
+    <div class="section-label">04 — Contact</div>
     <h2>Request the<br>examination.</h2>
     <div class="two-col">
       <div>
