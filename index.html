@@ -1,240 +1,189 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light">
-<meta name="description" content="The AI Memory Files: an independent examination of AI-generated personal profiles, their inferences, and the difference between remembered facts and assumptions.">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="light" name="color-scheme"/>
+<meta content="The AI Memory Files: an independent examination of AI-generated personal profiles, their inferences, and the difference between remembered facts and assumptions." name="description"/>
 <title>The AI Memory Files | Private Lives</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <style>
 :root{--paper:#f3f0ea;--white:#faf8f4;--ink:#171615;--muted:#625d56;--rule:#cbc4ba;--accent:#84342f;--tint:#eae4dc}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--paper);font:16px/1.65 'DM Sans',Arial,sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit}a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:3px}h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;line-height:1.04}p{margin:0 0 18px}.container{width:min(1180px,calc(100% - 64px));margin:auto}header{position:sticky;top:0;z-index:30;background:rgba(243,240,234,.97);backdrop-filter:blur(13px);border-bottom:1px solid var(--rule)}.head-inner{min-height:76px;display:flex;justify-content:space-between;align-items:center;gap:28px}.logo{text-decoration:none;font-family:'Cormorant Garamond',Georgia,serif;font-size:25px;white-space:nowrap;font-weight:600}.logo:hover,nav a:hover{color:var(--accent)}nav{display:flex;align-items:center;flex-wrap:wrap;gap:12px 25px}nav a{text-decoration:none;font-size:11px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;white-space:nowrap}section{border-bottom:1px solid var(--rule);padding:105px 0}section[id],#film,#top{scroll-margin-top:92px}.eyebrow,.section-label{font-size:11px;line-height:1.4;letter-spacing:.19em;text-transform:uppercase;font-weight:700;color:var(--accent);margin-bottom:20px}.hero{padding:90px 0 88px;min-height:675px;display:flex;align-items:center}.hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(300px,.75fr);gap:clamp(35px,6vw,100px);align-items:center}.hero h1{font-size:clamp(66px,7.3vw,116px);letter-spacing:-.035em;line-height:.89;margin:0 0 32px}.hero h1 em{font-weight:400}.hero-sub{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(26px,2.7vw,34px);line-height:1.24;max-width:610px;margin-bottom:24px}.hero-detail{color:var(--muted);max-width:560px;line-height:1.65}.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:35px}.btn{display:inline-flex;min-height:52px;align-items:center;justify-content:center;padding:13px 23px;border:1px solid var(--ink);font:700 11px/1.3 'DM Sans',Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .2s,color .2s,border-color .2s;border-radius:0}.btn-primary{color:var(--white);background:var(--ink)}.btn-primary:hover{background:var(--accent);border-color:var(--accent)}.btn-outline:hover{background:var(--ink);color:var(--white)}.video-shell{width:min(100%,360px);margin-left:auto}.video-frame{border:1px solid var(--ink);background:#111;box-shadow:15px 15px 0 var(--tint)}.video-frame video{display:block;width:100%;aspect-ratio:9/16;object-fit:contain;background:#101010}.video-caption{display:flex;justify-content:space-between;gap:12px;margin-top:22px;border-top:1px solid var(--rule);padding-top:13px;color:var(--muted);font-size:12px}.video-caption strong{color:var(--ink)}h2{font-size:clamp(48px,5.5vw,78px);letter-spacing:-.015em;margin:0 0 34px}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(35px,7vw,110px);align-items:start}.lead{font:400 clamp(28px,2.7vw,37px)/1.28 'Cormorant Garamond',Georgia,serif}.text-column{max-width:520px}.subtle{color:var(--muted)}.kicker{font-weight:700;color:var(--accent)}.measure{max-width:750px}.statement{background:var(--ink);color:var(--white);padding:48px 55px;margin-top:42px}.statement p{font:400 clamp(26px,3.1vw,42px)/1.23 'Cormorant Garamond',Georgia,serif;margin:0}.statement small{display:block;letter-spacing:.12em;font-size:11px;text-transform:uppercase;color:#ccc4bb;margin-top:20px}.examples{background:var(--white)}.example-intro{font-size:17px;max-width:740px;margin-bottom:12px}.samples{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:39px}.sample{background:var(--paper);border:1px solid var(--rule);padding:30px 31px 27px;min-height:255px}.sample-top{display:flex;justify-content:space-between;gap:8px;align-items:flex-start;margin-bottom:18px}.sample-no{font-size:12px;letter-spacing:.13em;color:var(--muted)}.sample-tag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);text-align:right}.sample blockquote{margin:0 0 19px;font:400 26px/1.22 'Cormorant Garamond',Georgia,serif}.sample p{font-size:13px;color:var(--muted);margin:0}.fineprint{font-size:12px;color:var(--muted);line-height:1.65}.method-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px;margin-top:38px}.method-item{border-top:2px solid var(--ink);padding-top:18px}.method-item span{display:block;font-size:11px;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;font-weight:700;margin-bottom:18px}.method-item h3{font-size:34px;margin:0 0 13px}.method-item p{font-size:15px;color:var(--muted)}.check-section{background:var(--tint)}.offer{margin-top:38px;border:1px solid var(--ink);background:var(--white);display:grid;grid-template-columns:1fr 290px;max-width:950px}.offer-main{padding:40px 42px}.offer h3{font-size:44px;margin:0 0 15px}.offer ul{padding-left:20px;margin:14px 0 0}.offer li{margin-bottom:8px}.offer-action{border-left:1px solid var(--rule);padding:40px 30px;display:flex;flex-direction:column;justify-content:center}.price{font:400 59px/1 'Cormorant Garamond',Georgia,serif;margin-bottom:12px}.offer-action .btn{margin-top:18px}.contact-form{display:flex;flex-direction:column;gap:16px}.field label{display:block;font-size:12px;font-weight:700;letter-spacing:.05em;margin-bottom:7px}.field input,.field textarea{display:block;width:100%;background:var(--white);border:1px solid #9e978e;border-radius:0;padding:14px 15px;color:var(--ink);font:16px/1.4 'DM Sans',Arial,sans-serif}.field textarea{resize:vertical;min-height:110px}.consent{display:flex;align-items:flex-start;gap:12px;font-size:13px;line-height:1.5}.consent input{margin-top:3px;accent-color:var(--accent)}.contact-form button{align-self:flex-start}.honeypot{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}.form-status{font-size:13px;line-height:1.55;padding:13px 16px;border:1px solid var(--rule);background:var(--white);margin:0}.form-status[hidden]{display:none}.form-status.error{border-color:var(--accent);color:var(--accent)}.direct-email{font-size:13px;color:var(--muted);margin:0}.direct-email a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}.contact-form button:disabled{opacity:.6;cursor:wait}footer{padding:45px 0 55px}.footer-row{display:flex;justify-content:space-between;align-items:flex-end;gap:25px}.footer-name{font:500 30px/1.1 'Cormorant Garamond',Georgia,serif;margin-bottom:8px}.footer-note{font-size:12px;color:var(--muted)}.reference-links a{color:inherit;text-decoration:underline;text-underline-offset:3px}a:hover{text-decoration-color:var(--accent)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--paper);font:16px/1.65 'DM Sans',Arial,sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit}a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:3px}h1,h2,h3,.serif{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;line-height:1.04}p{margin:0 0 18px}.container{width:min(1180px,calc(100% - 64px));margin:auto}header{position:sticky;top:0;z-index:30;background:rgba(243,240,234,.97);backdrop-filter:blur(13px);border-bottom:1px solid var(--rule)}.head-inner{min-height:76px;display:flex;justify-content:space-between;align-items:center;gap:28px}.logo{text-decoration:none;font-family:'Cormorant Garamond',Georgia,serif;font-size:25px;white-space:nowrap;font-weight:600}.logo:hover,nav a:hover{color:var(--accent)}nav{display:flex;align-items:center;flex-wrap:wrap;gap:12px 25px}nav a{text-decoration:none;font-size:11px;letter-spacing:.11em;text-transform:uppercase;font-weight:700;white-space:nowrap}section{border-bottom:1px solid var(--rule);padding:105px 0}section[id],#film,#top{scroll-margin-top:92px}.eyebrow,.section-label{font-size:11px;line-height:1.4;letter-spacing:.19em;text-transform:uppercase;font-weight:700;color:var(--accent);margin-bottom:20px}.hero{padding:90px 0 88px;min-height:675px;display:flex;align-items:center}.hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(300px,.75fr);gap:clamp(35px,6vw,100px);align-items:center}.hero h1{font-size:clamp(66px,7.3vw,116px);letter-spacing:-.035em;line-height:.89;margin:0 0 32px}.hero h1 em{font-weight:400}.hero-sub{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(26px,2.7vw,34px);line-height:1.24;max-width:610px;margin-bottom:24px}.hero-detail{color:var(--muted);max-width:560px;line-height:1.65}.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:35px}.btn{display:inline-flex;min-height:52px;align-items:center;justify-content:center;padding:13px 23px;border:1px solid var(--ink);font:700 11px/1.3 'DM Sans',Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .2s,color .2s,border-color .2s;border-radius:0}.btn-primary{color:var(--white);background:var(--ink)}.btn-primary:hover{background:var(--accent);border-color:var(--accent)}.btn-outline:hover{background:var(--ink);color:var(--white)}.video-shell{width:min(100%,360px);margin-left:auto}.video-frame{border:1px solid var(--ink);background:#111;box-shadow:15px 15px 0 var(--tint)}.video-frame video{display:block;width:100%;aspect-ratio:9/16;object-fit:contain;background:#101010}.video-caption{display:flex;justify-content:space-between;gap:12px;margin-top:22px;border-top:1px solid var(--rule);padding-top:13px;color:var(--muted);font-size:12px}.video-caption strong{color:var(--ink)}h2{font-size:clamp(48px,5.5vw,78px);letter-spacing:-.015em;margin:0 0 34px}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:clamp(35px,7vw,110px);align-items:start}.lead{font:400 clamp(28px,2.7vw,37px)/1.28 'Cormorant Garamond',Georgia,serif}.text-column{max-width:520px}.subtle{color:var(--muted)}.kicker{font-weight:700;color:var(--accent)}.measure{max-width:750px}.statement{background:var(--ink);color:var(--white);padding:48px 55px;margin-top:42px}.statement p{font:400 clamp(26px,3.1vw,42px)/1.23 'Cormorant Garamond',Georgia,serif;margin:0}.statement small{display:block;letter-spacing:.12em;font-size:11px;text-transform:uppercase;color:#ccc4bb;margin-top:20px}.examples{background:var(--white)}.example-intro{font-size:17px;max-width:740px;margin-bottom:12px}.samples{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:39px}.sample{background:var(--paper);border:1px solid var(--rule);padding:30px 31px 27px;min-height:255px}.sample-top{display:flex;justify-content:space-between;gap:8px;align-items:flex-start;margin-bottom:18px}.sample-no{font-size:12px;letter-spacing:.13em;color:var(--muted)}.sample-tag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);text-align:right}.sample blockquote{margin:0 0 19px;font:400 26px/1.22 'Cormorant Garamond',Georgia,serif}.sample p{font-size:13px;color:var(--muted);margin:0}.fineprint{font-size:12px;color:var(--muted);line-height:1.65}.method-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px;margin-top:38px}.method-item{border-top:2px solid var(--ink);padding-top:18px}.method-item span{display:block;font-size:11px;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;font-weight:700;margin-bottom:18px}.method-item h3{font-size:34px;margin:0 0 13px}.method-item p{font-size:15px;color:var(--muted)}.check-section{background:var(--tint)}.offer{margin-top:38px;border:1px solid var(--ink);background:var(--white);display:grid;grid-template-columns:1fr 290px;max-width:950px}.offer-main{padding:40px 42px}.offer h3{font-size:44px;margin:0 0 15px}.offer ul{padding-left:20px;margin:14px 0 0}.offer li{margin-bottom:8px}.offer-action{border-left:1px solid var(--rule);padding:40px 30px;display:flex;flex-direction:column;justify-content:center}.price{font:400 59px/1 'Cormorant Garamond',Georgia,serif;margin-bottom:12px}.offer-action .btn{margin-top:18px}.contact-form{display:flex;flex-direction:column;gap:16px}.field label{display:block;font-size:12px;font-weight:700;letter-spacing:.05em;margin-bottom:7px}.field input,.field textarea{display:block;width:100%;background:var(--white);border:1px solid #9e978e;border-radius:0;padding:14px 15px;color:var(--ink);font:16px/1.4 'DM Sans',Arial,sans-serif}.field textarea{resize:vertical;min-height:110px}.consent{display:flex;align-items:flex-start;gap:12px;font-size:13px;line-height:1.5}.consent input{margin-top:3px;accent-color:var(--accent)}.contact-form button{align-self:flex-start}.honeypot{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}footer{padding:45px 0 55px}.footer-row{display:flex;justify-content:space-between;align-items:flex-end;gap:25px}.footer-name{font:500 30px/1.1 'Cormorant Garamond',Georgia,serif;margin-bottom:8px}.footer-note{font-size:12px;color:var(--muted)}.reference-links a{color:inherit;text-decoration:underline;text-underline-offset:3px}a:hover{text-decoration-color:var(--accent)}
 @media(max-width:970px){.hero-grid{grid-template-columns:minmax(0,1fr) minmax(260px,.7fr);gap:36px}.hero h1{font-size:clamp(58px,7vw,80px)}.method-grid{gap:20px}.offer{grid-template-columns:1fr 230px}.offer-main{padding:30px}}
 @media(max-width:760px){.container{width:min(100% - 38px,580px)}.head-inner{padding:13px 0;align-items:flex-start;flex-direction:column;gap:8px}.logo{font-size:24px}nav{gap:9px 15px}nav a{font-size:10px}.hero{padding:60px 0 72px;min-height:auto}.hero-grid,.two-col,.samples,.method-grid,.offer{grid-template-columns:1fr}.hero h1{font-size:clamp(60px,13vw,90px)}.hero-sub{font-size:29px}.hero-cta{gap:10px}.video-shell{width:min(100%,340px);margin:18px auto 0}.video-frame{box-shadow:9px 9px 0 var(--tint)}section{padding:67px 0}section[id],#film{scroll-margin-top:135px}.statement{padding:34px 30px}.samples{gap:12px}.sample{min-height:auto;padding:26px}.offer-action{border-left:0;border-top:1px solid var(--rule);padding:30px}.contact-form button{width:100%}.footer-row{flex-direction:column;align-items:flex-start}.footer-name{font-size:27px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+
+.direct-email{border:1px solid var(--rule);background:var(--white);padding:38px 34px}.direct-email h3{font-size:39px;margin:0 0 12px}.direct-email p{font-size:15px}.direct-email .btn{margin-top:11px}.direct-email .fineprint{font-size:12px;color:var(--muted)}@media(max-width:760px){.direct-email{padding:26px}.direct-email .btn{width:100%}}
 </style>
 </head>
 <body id="top">
 <header>
- <div class="container head-inner">
-  <a class="logo" href="#top" aria-label="The AI Memory Files, return to top">The AI Memory Files</a>
-  <nav aria-label="Site navigation">
-   <a href="#premise">Investigation</a>
-   <a href="#dossier">Sample Profiles</a>
-   <a href="#method">Our Method</a>
-   <a href="#check">Data Check</a>
-   <a href="#contact">Contact</a>
-  </nav>
- </div>
+<div class="container head-inner">
+<a aria-label="The AI Memory Files, return to top" class="logo" href="#top">The AI Memory Files</a>
+<nav aria-label="Site navigation">
+<a href="#premise">Investigation</a>
+<a href="#dossier">Sample Profiles</a>
+<a href="#method">Our Method</a>
+<a href="#check">Data Check</a>
+<a href="#contact">Contact</a>
+</nav>
+</div>
 </header>
 <main>
-<section class="hero" aria-labelledby="page-title">
- <div class="container hero-grid">
-  <div>
-   <div class="eyebrow">An independent examination of AI memory</div>
-   <h1 id="page-title">Your private life.<br><em>In a file.</em></h1>
-   <p class="hero-sub">What happens when ordinary conversations become a detailed personal profile?</p>
-   <p class="hero-detail">A review of an AI-generated memory summary revealed more than remembered facts. It included sensitive references, descriptions of relationships, outdated details, and personal conclusions that deserved closer scrutiny.</p>
-   <div class="hero-cta">
-    <a class="btn btn-primary" href="#dossier">Examine the Examples</a>
-    <a class="btn btn-outline" href="#contact">Request a Review</a>
-   </div>
-  </div>
-  <div>
-   <div class="video-shell" id="film">
-    <div class="video-frame">
-     <video controls playsinline preload="metadata" aria-label="Private Lives, a short investigative film">
-      <source src="videos/ai-mem.mp4" type="video/mp4">
+<section aria-labelledby="page-title" class="hero">
+<div class="container hero-grid">
+<div>
+<div class="eyebrow">An independent examination of AI memory</div>
+<h1 id="page-title">Your private life.<br/><em>In a file.</em></h1>
+<p class="hero-sub">What happens when ordinary conversations become a detailed personal profile?</p>
+<p class="hero-detail">A review of an AI-generated memory summary revealed more than remembered facts. It included sensitive references, descriptions of relationships, outdated details, and personal conclusions that deserved closer scrutiny.</p>
+<div class="hero-cta">
+<a class="btn btn-primary" href="#dossier">Examine the Examples</a>
+<a class="btn btn-outline" href="#contact">Request a Review</a>
+</div>
+</div>
+<div>
+<div class="video-shell" id="film">
+<div class="video-frame">
+<video aria-label="Private Lives, a short investigative film" controls="" playsinline="" preload="metadata">
+<source src="videos/ai-mem.mp4" type="video/mp4"/>
       Your browser does not support embedded video.
      </video>
-    </div>
-    <div class="video-caption"><strong>PRIVATE LIVES</strong><span>Short investigative film · 00:15</span></div>
-   </div>
-  </div>
- </div>
+</div>
+<div class="video-caption"><strong>PRIVATE LIVES</strong><span>Short investigative film · 00:15</span></div>
+</div>
+</div>
+</div>
 </section>
 <section id="premise">
- <div class="container">
-  <div class="section-label">01 / The investigation</div>
-  <h2>The file was more<br>than a memory.</h2>
-  <div class="two-col">
-   <p class="lead">An AI-generated profile brought together the facts someone had shared, recurring patterns from conversation, and judgments about a life that could not all be verified from the summary itself.</p>
-   <div class="text-column">
-    <p>Professional milestones appeared alongside personal relationships, health references, beliefs, goals, and emotionally charged descriptions. Some statements had dates attached. Others assigned motivations or made assumptions without showing how they were established.</p>
-    <p>That difference matters. Remembering that someone discussed a relationship is not the same as knowing what that relationship meant. Repeating a medical experience is not the same as understanding a person's present health. And a prediction should never be mistaken for a documented fact.</p>
-    <p class="subtle">This examination is based on a user-supplied memory summary. It does not establish that a system secretly accessed undisclosed information or stores every conversation permanently.</p>
-   </div>
-  </div>
-  <div class="statement">
-   <p>“The concern is not just what a system remembers. It is what happens when an interpretation is written down as though it were a fact.”</p>
-   <small>Central question of the investigation</small>
-  </div>
- </div>
+<div class="container">
+<div class="section-label">01 / The investigation</div>
+<h2>The file was more<br/>than a memory.</h2>
+<div class="two-col">
+<p class="lead">An AI-generated profile brought together the facts someone had shared, recurring patterns from conversation, and judgments about a life that could not all be verified from the summary itself.</p>
+<div class="text-column">
+<p>Professional milestones appeared alongside personal relationships, health references, beliefs, goals, and emotionally charged descriptions. Some statements had dates attached. Others assigned motivations or made assumptions without showing how they were established.</p>
+<p>That difference matters. Remembering that someone discussed a relationship is not the same as knowing what that relationship meant. Repeating a medical experience is not the same as understanding a person's present health. And a prediction should never be mistaken for a documented fact.</p>
+<p class="subtle">This examination is based on a user-supplied memory summary. It does not establish that a system secretly accessed undisclosed information or stores every conversation permanently.</p>
+</div>
+</div>
+<div class="statement">
+<p>“The concern is not just what a system remembers. It is what happens when an interpretation is written down as though it were a fact.”</p>
+<small>Central question of the investigation</small>
+</div>
+</div>
 </section>
-<section id="dossier" class="examples">
- <div class="container">
-  <div class="section-label">02 / Inside the profile</div>
-  <h2>Ordinary conversations.<br>Unsettling conclusions.</h2>
-  <p class="example-intro">These fictional composites illustrate the types of entries a generated memory profile can contain. They are not quotations from any person's record, and the people and circumstances are invented.</p>
-  <div class="samples">
-   <article class="sample">
-    <div class="sample-top"><span class="sample-no">EXCERPT 01</span><span class="sample-tag">Relationship inference</span></div>
-    <blockquote>“Repeated discussions of a colleague suggest an unresolved personal attachment.”</blockquote>
-    <p>A record of conversations becomes a claim about someone's private feelings. The conclusion may be wrong.</p>
-   </article>
-   <article class="sample">
-    <div class="sample-top"><span class="sample-no">EXCERPT 02</span><span class="sample-tag">Sensitive context</span></div>
-    <blockquote>“The subject's previous health concerns may still influence daily decisions.”</blockquote>
-    <p>A historical discussion is transformed into a current psychological or medical interpretation.</p>
-   </article>
-   <article class="sample">
-    <div class="sample-top"><span class="sample-no">EXCERPT 03</span><span class="sample-tag">Motive assigned</span></div>
-    <blockquote>“The decision to change careers reflects a need to regain control.”</blockquote>
-    <p>Career facts can be real while the explanation of motive remains an unverified guess.</p>
-   </article>
-   <article class="sample">
-    <div class="sample-top"><span class="sample-no">EXCERPT 04</span><span class="sample-tag">Belief versus inquiry</span></div>
-    <blockquote>“Interest in a controversial subject demonstrates a firm belief in it.”</blockquote>
-    <p>Asking questions about an idea does not establish personal belief or endorsement.</p>
-   </article>
-   <article class="sample">
-    <div class="sample-top"><span class="sample-no">EXCERPT 05</span><span class="sample-tag">Outdated information</span></div>
-    <blockquote>“The subject currently lives in the city mentioned in an earlier conversation.”</blockquote>
-    <p>An old location can persist in a summary after the underlying circumstances have changed.</p>
-   </article>
-   <article class="sample">
-    <div class="sample-top"><span class="sample-no">EXCERPT 06</span><span class="sample-tag">Overconfident profile</span></div>
-    <blockquote>“The subject prefers confrontation and is unlikely to reconsider.”</blockquote>
-    <p>Communication style is interpreted as a stable personality trait, without appropriate uncertainty.</p>
-   </article>
-  </div>
-  <p class="fineprint" style="margin-top:24px">Illustrative examples only. No personal records, intimate disclosures, or identifying details from the source profile are published on this page.</p>
- </div>
+<section class="examples" id="dossier">
+<div class="container">
+<div class="section-label">02 / Inside the profile</div>
+<h2>Ordinary conversations.<br/>Unsettling conclusions.</h2>
+<p class="example-intro">These fictional composites illustrate the types of entries a generated memory profile can contain. They are not quotations from any person's record, and the people and circumstances are invented.</p>
+<div class="samples">
+<article class="sample">
+<div class="sample-top"><span class="sample-no">EXCERPT 01</span><span class="sample-tag">Relationship inference</span></div>
+<blockquote>“Repeated discussions of a colleague suggest an unresolved personal attachment.”</blockquote>
+<p>A record of conversations becomes a claim about someone's private feelings. The conclusion may be wrong.</p>
+</article>
+<article class="sample">
+<div class="sample-top"><span class="sample-no">EXCERPT 02</span><span class="sample-tag">Sensitive context</span></div>
+<blockquote>“The subject's previous health concerns may still influence daily decisions.”</blockquote>
+<p>A historical discussion is transformed into a current psychological or medical interpretation.</p>
+</article>
+<article class="sample">
+<div class="sample-top"><span class="sample-no">EXCERPT 03</span><span class="sample-tag">Motive assigned</span></div>
+<blockquote>“The decision to change careers reflects a need to regain control.”</blockquote>
+<p>Career facts can be real while the explanation of motive remains an unverified guess.</p>
+</article>
+<article class="sample">
+<div class="sample-top"><span class="sample-no">EXCERPT 04</span><span class="sample-tag">Belief versus inquiry</span></div>
+<blockquote>“Interest in a controversial subject demonstrates a firm belief in it.”</blockquote>
+<p>Asking questions about an idea does not establish personal belief or endorsement.</p>
+</article>
+<article class="sample">
+<div class="sample-top"><span class="sample-no">EXCERPT 05</span><span class="sample-tag">Outdated information</span></div>
+<blockquote>“The subject currently lives in the city mentioned in an earlier conversation.”</blockquote>
+<p>An old location can persist in a summary after the underlying circumstances have changed.</p>
+</article>
+<article class="sample">
+<div class="sample-top"><span class="sample-no">EXCERPT 06</span><span class="sample-tag">Overconfident profile</span></div>
+<blockquote>“The subject prefers confrontation and is unlikely to reconsider.”</blockquote>
+<p>Communication style is interpreted as a stable personality trait, without appropriate uncertainty.</p>
+</article>
+</div>
+<p class="fineprint" style="margin-top:24px">Illustrative examples only. No personal records, intimate disclosures, or identifying details from the source profile are published on this page.</p>
+</div>
 </section>
 <section id="method">
- <div class="container">
-  <div class="section-label">03 / Reading the evidence carefully</div>
-  <h2>Facts, inferences<br>and mistakes.</h2>
-  <p class="measure">A meaningful review does not treat every sentence of a generated memory profile as equally reliable. It separates what was disclosed from what the system inferred, and identifies statements that may be outdated, misattributed, or unsupported.</p>
-  <div class="method-grid">
-   <div class="method-item"><span>01 / Documented</span><h3>What was shared</h3><p>Details explicitly supplied in a conversation or another source the user chooses to provide.</p></div>
-   <div class="method-item"><span>02 / Interpreted</span><h3>What was inferred</h3><p>Impressions about intentions, relationships, beliefs, or private circumstances that go beyond direct statements.</p></div>
-   <div class="method-item"><span>03 / Uncertain</span><h3>What needs checking</h3><p>Stale information, contradictory dates, overstated claims, or conclusions that lack supporting evidence.</p></div>
-  </div>
-  <p class="fineprint reference-links" style="margin-top:30px">For context, review <a href="https://help.openai.com/en/articles/8590148-memory-in-chatgpt" target="_blank" rel="noopener noreferrer">published memory documentation</a> and <a href="https://help.openai.com/en/articles/7730893-data-controls-in-chatgpt" target="_blank" rel="noopener noreferrer">data-control guidance</a>. Memory features and retention policies vary by provider and settings.</p>
- </div>
+<div class="container">
+<div class="section-label">03 / Reading the evidence carefully</div>
+<h2>Facts, inferences<br/>and mistakes.</h2>
+<p class="measure">A meaningful review does not treat every sentence of a generated memory profile as equally reliable. It separates what was disclosed from what the system inferred, and identifies statements that may be outdated, misattributed, or unsupported.</p>
+<div class="method-grid">
+<div class="method-item"><span>01 / Documented</span><h3>What was shared</h3><p>Details explicitly supplied in a conversation or another source the user chooses to provide.</p></div>
+<div class="method-item"><span>02 / Interpreted</span><h3>What was inferred</h3><p>Impressions about intentions, relationships, beliefs, or private circumstances that go beyond direct statements.</p></div>
+<div class="method-item"><span>03 / Uncertain</span><h3>What needs checking</h3><p>Stale information, contradictory dates, overstated claims, or conclusions that lack supporting evidence.</p></div>
+</div>
+<p class="fineprint reference-links" style="margin-top:30px">For context, review <a href="https://help.openai.com/en/articles/8590148-memory-in-chatgpt" rel="noopener noreferrer" target="_blank">published memory documentation</a> and <a href="https://help.openai.com/en/articles/7730893-data-controls-in-chatgpt" rel="noopener noreferrer" target="_blank">data-control guidance</a>. Memory features and retention policies vary by provider and settings.</p>
+</div>
 </section>
 <section class="check-section" id="check">
- <div class="container">
-  <div class="section-label">04 / Independent profile review</div>
-  <h2>Have your own<br>profile examined.</h2>
-  <p class="measure">A written assessment of a memory summary or conversation export that <strong>you provide</strong>. We look for sensitive details, unsupported conclusions, and possible mistakes. We cannot retrieve hidden records from an AI provider or guarantee that information has been deleted from its systems.</p>
-  <div class="offer">
-   <div class="offer-main">
-    <h3>AI Memory Profile Review</h3>
-    <p>A focused, manually evaluated report covering:</p>
-    <ul>
-     <li>Personal facts and sensitive references included in the supplied profile</li>
-     <li>Relationship, behavioral, and psychological inferences</li>
-     <li>Possible inaccuracies, contradictions, and outdated details</li>
-     <li>A clear distinction between evidence and interpretation</li>
-     <li>Practical suggestions for reviewing available privacy controls</li>
-    </ul>
-   </div>
-   <div class="offer-action">
-    <div class="section-label" style="margin-bottom:10px">Flat review fee</div>
-    <div class="price">$19.95</div>
-    <p class="fineprint">Submitting an inquiry does not charge you. Payment and any document-sharing arrangements are handled separately.</p>
-    <a href="#contact" class="btn btn-primary">Request a Review</a>
-   </div>
-  </div>
- </div>
+<div class="container">
+<div class="section-label">04 / Independent profile review</div>
+<h2>Have your own<br/>profile examined.</h2>
+<p class="measure">A written assessment of a memory summary or conversation export that <strong>you provide</strong>. We look for sensitive details, unsupported conclusions, and possible mistakes. We cannot retrieve hidden records from an AI provider or guarantee that information has been deleted from its systems.</p>
+<div class="offer">
+<div class="offer-main">
+<h3>AI Memory Profile Review</h3>
+<p>A focused, manually evaluated report covering:</p>
+<ul>
+<li>Personal facts and sensitive references included in the supplied profile</li>
+<li>Relationship, behavioral, and psychological inferences</li>
+<li>Possible inaccuracies, contradictions, and outdated details</li>
+<li>A clear distinction between evidence and interpretation</li>
+<li>Practical suggestions for reviewing available privacy controls</li>
+</ul>
+</div>
+<div class="offer-action">
+<div class="section-label" style="margin-bottom:10px">Flat review fee</div>
+<div class="price">$19.95</div>
+<p class="fineprint">Submitting an inquiry does not charge you. Payment and any document-sharing arrangements are handled separately.</p>
+<a class="btn btn-primary" href="#contact">Request a Review</a>
+</div>
+</div>
+</div>
 </section>
 <section id="contact">
- <div class="container">
-  <div class="section-label">05 / Contact</div>
-  <h2>Request an<br>examination.</h2>
-  <div class="two-col">
-   <div>
-    <p class="lead">Independent review by<br>Dr. Stephen Dietrich-Kolokouris.</p>
-    <p class="text-column">Use this form to ask about a profile review. Your inquiry will be forwarded by email through a third-party form delivery service. Please do not include medical records, passwords, intimate disclosures, or a full conversation export in this message.</p>
-    <p class="subtle">A separate arrangement for sharing any relevant material can be discussed after contact.</p>
-   </div>
-   <div>
-    <form class="contact-form" id="inquiry-form" method="POST" action="https://formsubmit.co/stephen@wolframtek.de" accept-charset="UTF-8">
-     <input type="hidden" name="_subject" value="New Private Lives profile review inquiry">
-     <input type="hidden" name="_template" value="table">
-     <input type="hidden" name="_next" value="https://skdietrich.github.io/ai-memory-files/thanks.html">
-      <input type="hidden" name="_url" value="https://skdietrich.github.io/ai-memory-files/">
-     <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" maxlength="120" autocomplete="name" required></div>
-     <div class="field"><label for="email">Your email</label><input id="email" name="email" type="email" maxlength="254" autocomplete="email" required></div>
-     <div class="field"><label for="message">What would you like reviewed?</label><textarea id="message" name="message" maxlength="1500" rows="4" placeholder="A brief description is enough. Please don't include private records here." required></textarea></div>
-     <div class="honeypot" aria-hidden="true"><label for="website">Leave this blank</label><input id="website" name="_honey" tabindex="-1" autocomplete="off"></div>
-     <label class="consent"><input type="checkbox" name="consent" value="yes" required><span>I understand that my inquiry will be processed by FormSubmit to deliver email and should not contain sensitive documents or confidential details.</span></label>
-     <button type="submit" class="btn btn-primary" id="inquiry-send">Send Review Inquiry</button>
-     <p class="form-status" id="contact-status" role="status" aria-live="polite" hidden></p>
-     <p class="direct-email">Having trouble with the form? <a href="mailto:stephen@wolframtek.de?subject=Private%20Lives%20Review%20Inquiry">Email stephen@wolframtek.de directly</a>.</p>
-     <p class="fineprint">This form requests information only. It does not process payment or upload personal files. It uses the third-party FormSubmit service for message delivery.</p>
-    </form>
-   </div>
-  </div>
- </div>
+<div class="container">
+<div class="section-label">05 / Contact</div>
+<h2>Request an<br/>examination.</h2>
+<div class="two-col">
+<div>
+<p class="lead">Independent review by<br/>Dr. Stephen Dietrich-Kolokouris.</p>
+<p class="text-column">To request a review, email me directly. Your email application will open with the address and subject filled in. Please include only a short description, not medical records, passwords, or private conversation exports.</p>
+<p class="subtle">I will reply by email to discuss the next steps. There is no charge for sending an inquiry.</p>
+</div>
+<div>
+<div class="direct-email">
+<h3>Email your inquiry</h3>
+<p>Click the button below. Your email app opens a new message addressed to <strong>stephen@wolframtek.de</strong>.</p>
+<a class="btn btn-primary" href="mailto:stephen@wolframtek.de?subject=Private%20Lives%20Review%20Inquiry">Email Your Inquiry</a>
+<p class="fineprint" style="margin-top:18px">You must press <strong>Send</strong> in your email app. If the button does not open an email window, write directly to <a href="mailto:stephen@wolframtek.de">stephen@wolframtek.de</a>. This website does not take payment or collect personal records.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 </main>
 <footer>
- <div class="container footer-row">
-  <div><div class="footer-name">Dr. Stephen Dietrich-Kolokouris</div><div class="footer-note">The AI Memory Files · Independent examination</div></div>
-  <div class="footer-note">&copy; 2026 All rights reserved.</div>
- </div>
+<div class="container footer-row">
+<div><div class="footer-name">Dr. Stephen Dietrich-Kolokouris</div><div class="footer-note">The AI Memory Files · Independent examination</div></div>
+<div class="footer-note">© 2026 All rights reserved.</div>
+</div>
 </footer>
-<script>
-// Confirm the form service's result before showing the thank-you page.
-// Without JavaScript, the native HTML form still posts to FormSubmit.
-(function () {
-  var form = document.getElementById('inquiry-form');
-  var status = document.getElementById('contact-status');
-  var button = document.getElementById('inquiry-send');
-  if (!form || !status || !button || !window.fetch) return;
-
-  form.addEventListener('submit', async function (event) {
-    event.preventDefault();
-    if (!form.reportValidity()) return;
-    var label = button.textContent;
-    button.disabled = true;
-    button.textContent = 'Sending…';
-    status.hidden = false;
-    status.className = 'form-status';
-    status.textContent = 'Checking the submission with the email service…';
-
-    try {
-      var payload = Object.fromEntries(new FormData(form).entries());
-      var response = await fetch('https://formsubmit.co/ajax/stephen@wolframtek.de', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-      var result = await response.json();
-      // FormSubmit sometimes returns HTTP 200 and success: "false" for errors.
-      if (!response.ok || String(result.success).toLowerCase() !== 'true') {
-        var message = (result && typeof result.message === 'string') ? result.message : '';
-        if (/activat/i.test(message)) {
-          throw new Error('The form address has not been activated. Check the FormSubmit activation email for stephen@wolframtek.de. You can also use the direct email link below.');
-        }
-        throw new Error(message || 'The form service did not confirm your submission. Please email us directly using the link below.');
-      }
-      window.location.assign('thanks.html');
-    } catch (error) {
-      status.className = 'form-status error';
-      status.textContent = (error && error.message) ? error.message : 'Unable to contact the form service. Please use the direct email link below.';
-    } finally {
-      button.disabled = false;
-      button.textContent = label;
-    }
-  });
-})();
-</script>
 </body>
 </html>
