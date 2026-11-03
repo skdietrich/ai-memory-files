@@ -84,9 +84,9 @@ nav a:hover { color: var(--accent); }
 /* VIDEOS */
 .videos-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  margin-top: 48px;
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 480px;
+  margin: 48px auto 0;
 }
 
 .video-item {
@@ -98,6 +98,8 @@ nav a:hover { color: var(--accent); }
   width: 100%;
   display: block;
   background: #111;
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
 }
 
 .video-meta {
@@ -333,7 +335,7 @@ footer .container {
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
-  .hero-grid, .two-col, .packages, .videos-grid { grid-template-columns: 1fr; gap: 40px; }
+  .hero-grid, .two-col, .packages { grid-template-columns: 1fr; gap: 40px; }
   .hero h1 { font-size: 64px; }
   .container { padding: 0 24px; }
   nav a { margin-left: 16px; font-size: 12px; }
@@ -428,43 +430,17 @@ footer .container {
 <section id="films">
   <div class="container">
     <div class="section-label">03 — The Evidence</div>
-    <h2>Four treatments.<br>One investigation.</h2>
-    <p style="max-width: 640px; margin-bottom: 8px; font-size: 18px;">15-second investigative reports. Photorealistic. Cold natural light. Marble. Human faces. No generic technology imagery.</p>
+    <h2>Private Lives</h2>
+    <p style="max-width: 640px; margin-bottom: 8px; font-size: 18px;">A 15-second investigative film about private lives and artificial intelligence.</p>
     <div class="videos-grid">
       <div class="video-item">
-        <video controls playsinline poster="">
-          <source src="videos/LLM-data-1.mp4" type="video/mp4">
-        </video>
-        <div class="video-meta">
-          <h3>The File You Never Wrote</h3>
-          <p>Original marble archive treatment</p>
-        </div>
-      </div>
-      <div class="video-item">
-        <video controls playsinline>
-          <source src="videos/llm-2.mp4" type="video/mp4">
-        </video>
-        <div class="video-meta">
-          <h3>Her Life</h3>
-          <p>Subject-centered reconstruction</p>
-        </div>
-      </div>
-      <div class="video-item">
-        <video controls playsinline>
+        <video controls playsinline preload="metadata" aria-label="Private Lives investigative film">
           <source src="videos/ai-mem.mp4" type="video/mp4">
+          Your browser does not support the HTML5 video player.
         </video>
         <div class="video-meta">
           <h3>Private Lives</h3>
           <p>Intimate dialogue treatment</p>
-        </div>
-      </div>
-      <div class="video-item">
-        <video controls playsinline>
-          <source src="videos/llm-fast.mp4" type="video/mp4">
-        </video>
-        <div class="video-meta">
-          <h3>User Memory</h3>
-          <p>Direct interface exposure</p>
         </div>
       </div>
     </div>
